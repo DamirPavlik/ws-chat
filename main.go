@@ -28,8 +28,7 @@ func handleWS(w http.ResponseWriter, r *http.Request) {
 			fmt.Println("read err: ", err)
 			break
 		}
-
-		fmt.Printf("recieved: %s\n", err)
+		fmt.Printf("recieved: %s\n", msg)
 		err = conn.WriteMessage(msgType, msg)
 		if err != nil {
 			fmt.Println("write err: ", err)
